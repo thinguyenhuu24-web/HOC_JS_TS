@@ -15,6 +15,7 @@
 // .gitignore
 // PS C:\Users\PC\Desktop\REPO_JS_TS_BASIC\GitHub\HOC_JS_TS> git config --global --list -> xem thông git cài đặt trên github: git config --global --list
 
+Sử dụng terminal
 Bạn có 3 file modified là:
 
 bai4/bai4.js
@@ -37,3 +38,7 @@ git add -u
 Add tất cả (bao gồm cả file mới chưa track, như bai7/):
 
 git add .
+-> Sau đó thực hiện commit bằng cách gõ lệnh: 
+PS C:\Users\PC\Desktop\REPO_JS_TS_BASIC\GitHub\HOC_JS_TS> git commit -m "add msg"
+-> Sau đó đẩy lên repo 
+PS C:\Users\PC\Desktop\REPO_JS_TS_BASIC\GitHub\HOC_JS_TS> git push
