@@ -309,3 +309,36 @@ for (const selector of possibleBanners ){
 // })
 
 // console.log(sanPhamCanTim)
+
+
+function(thamso){
+
+}
+
+//==BIỂU THỨC HÀM 
+const tenBien = function(thamso){
+    return ket qua 
+
+}
+
+const tinhHieu = function(a, b){
+    retturn a - b 
+}
+
+const ketQua = tinhHieu (8, 5)
+console.log(ketQua)
+
+//==ARROW FUNCTION
+
+const tenBien = function(thamso) => {
+    return ket qua 
+
+}
+
+const tinhNhan = (a, b) => a * b
+//Cơ chế hoisting (khai báo sau và dùng trước) -> sử dụng với các hàm tiện ích (tính tổng, nhân)
+function tong(a,b){
+    return a + b
+}
+//thì có thể viết 
+console.log(tong(1,3)); 
