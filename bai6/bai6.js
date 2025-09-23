@@ -42,3 +42,4 @@ git add .
 PS C:\Users\PC\Desktop\REPO_JS_TS_BASIC\GitHub\HOC_JS_TS> git commit -m "add msg"
 -> Sau đó đẩy lên repo 
 PS C:\Users\PC\Desktop\REPO_JS_TS_BASIC\GitHub\HOC_JS_TS> git push
+cccccccc
