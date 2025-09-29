@@ -121,124 +121,125 @@ for (const selector of possibleBanners ){
 // // -> 1, trả về 1 giá trị
 // // -> 2, kết thúc hàm ngay lập tức
 
-// // function tinhTong(a, b){
-// //     const result = a + b
-// //     return
-// // }
-// // const sum = tinhTong(3,5)
-// // console.log(sum)
+function tinhTong(a, b){
+    const result = a + b
+    return
+}
+const sum = tinhTong(3,5)
+console.log(sum)
 
-// // function checkAccess(age){
-// //     if(age < 18){
-// //         console.log('chua du tuoi. moi ra ngoai')
-// //         return
-// //     }
-// //     console.log('Du tuoi vao. moi ban vao');
-// // }
+function checkAccess(age){
+    if(age < 18){
+        console.log('chua du tuoi. moi ra ngoai')
+        return
+    }
+    console.log('Du tuoi vao. moi ban vao');
+}
 
-// // //checkAccess(15)
-// // const msg = checkAccess(15)
-// // console.log(msg);
+//checkAccess(15)
+const msg = checkAccess(15)
+console.log(msg);
 
-// // const tickets = ['Thường', 'Thường', 'VIP', 'Thường', 'VIP']
+const tickets = ['Thường', 'Thường', 'VIP', 'Thường', 'VIP']
 
-// // for(const ticket of tickets){
-// //     console.log(`Dang kiem tra ve: ${ticket}`);
+for(const ticket of tickets){
+    console.log(`Dang kiem tra ve: ${ticket}`);
     
-// //     if(ticket === 'VIP'){
-// //         console.log('Mời bạn vào');
-// //         break;
-// //     }
-// // }
+    if(ticket === 'VIP'){
+        console.log('Mời bạn vào');
+        break;
+    }
+}
 
 // // //forEach ko có break
 // // //forEach(function(item){})
 
-// // let foundVip = false;
+let foundVip = false;
 
-// // tickets.forEach(function(item){
-// //   if(foundVip){
-// //     console.log(`Da tim thay VIP, nhung van liec qua ve: ${item}`);
-// //     return
-// //   }
-// //   console.log(`Dang kiem tra ve ${item}`);
-// //   if(item === 'VIP'){
-// //       console.log('=> DA TIM THAY VE VIP MOI VAO');
-// //       foundVip = true
-// //   }
+tickets.forEach(function(item){
+  if(foundVip){
+    console.log(`Da tim thay VIP, nhung van liec qua ve: ${item}`);
+    return
+  }
+  console.log(`Dang kiem tra ve ${item}`);
+  if(item === 'VIP'){
+      console.log('=> DA TIM THAY VE VIP MOI VAO');
+      
+      foundVip = true
+  }
   
-// // })
+})
 
 
-// // Kịch bản: Phân tích Log Server
-// // Mục tiêu: Bạn có một mảng các chuỗi log từ server. Bạn cần tìm dòng log đầu tiên ghi nhận một lượt đăng nhập thất bại (status=FAIL) của dịch vụ xác thực người dùng (service=USER_AUTH).
+// Kịch bản: Phân tích Log Server
+// Mục tiêu: Bạn có một mảng các chuỗi log từ server. Bạn cần tìm dòng log đầu tiên ghi nhận một lượt đăng nhập thất bại (status=FAIL) của dịch vụ xác thực người dùng (service=USER_AUTH).
 
-// // Quy trình xử lý:
+// Quy trình xử lý:
 
-// // Tìm dòng log phù hợp đầu tiên.
+// Tìm dòng log phù hợp đầu tiên.
 
-// // Từ dòng log đó, dùng các kỹ thuật xử lý chuỗi để trích xuất ra mã người dùng (uid) và mã lỗi (err_code).
+// Từ dòng log đó, dùng các kỹ thuật xử lý chuỗi để trích xuất ra mã người dùng (uid) và mã lỗi (err_code).
 
-// // Ngay sau khi trích xuất thành công, dừng lại và không xử lý các dòng log còn lại.
-// const logEntries = [
-//   't=1m service=PAYMENT status=OK uid=101',
-//   't=2m service=USER_AUTH status=FAIL uid=205 err_code=401', 
-//   't=3m service=INVENTORY status=OK uid=302',
-//   't=4m service=USER_AUTH status=OK uid=205',
-//   't=5m service=USER_AUTH status=FAIL uid=404 err_code=404', 
-// ];
+// Ngay sau khi trích xuất thành công, dừng lại và không xử lý các dòng log còn lại.
+const logEntries = [
+  't=1m service=PAYMENT status=OK uid=101',
+  't=2m service=USER_AUTH status=FAIL uid=205 err_code=401', 
+  't=3m service=INVENTORY status=OK uid=302',
+  't=4m service=USER_AUTH status=OK uid=205',
+  't=5m service=USER_AUTH status=FAIL uid=404 err_code=404', 
+];
 
-// ///
-// let failedLoginInfo = null
+///
+let failedLoginInfo = null
 
-// for(const log of logEntries){
+for(const log of logEntries){
 
-//   if(log.includes('service=USER_AUTH') && log.includes('status=FAIL')){
-//     console.log(`-> Tim thay dong log tiem nang: ${log}`);
+  if(log.includes('service=USER_AUTH') && log.includes('status=FAIL')){
+    console.log(`-> Tim thay dong log tiem nang: ${log}`);
 
-//     const parts = log.split(' ')
-//     // console.log('sau khi tach chuoi thanh mang',parts);
-//     let uid = null
-//     let errCode = null
-//     for (const part of parts){
-//       if(part.startsWith('uid=')){
-//         uid = part.replace('uid=','')
-//       }
-//       if(part.startsWith('err_code=')){
-//         errCode = part.slice("err_code=".length)
-//       }
-//     }
+    const parts = log.split(' ')
+    // console.log('sau khi tach chuoi thanh mang',parts);
+    let uid = null
+    let errCode = null
+    for (const part of parts){
+      if(part.startsWith('uid=')){
+        uid = part.replace('uid=','')
+      }
+      if(part.startsWith('err_code=')){
+        errCode = part.slice("err_code=".length)
+      }
+    }
 
-//     failedLoginInfo = {uuId: uid, errCode: errCode}
-//     console.log('Da tim thay log thich hop');
-//     break
+    failedLoginInfo = {uuId: uid, errCode: errCode}
+    console.log('Da tim thay log thich hop');
+    break
 
-//   }
+  }
 
-// }
+}
 
 // //MẢNG map()
-// const number = [1,2,3,4,5,6]
-// const doubleNumber = number.map(function(number){
-//     return number *2
-// })
-// console.log('mang ban dau', number)
-// console.log('mang sau khi bien doi',doubleNumber)
-// ///
-// const dailySales = [50, 65, 60, 80, 75]
+const number = [1,2,3,4,5,6]
+const doubleNumber = number.map(function(number){
+    return number *2
+})
+console.log('mang ban dau', number)
+console.log('mang sau khi bien doi',doubleNumber)
+///
+const dailySales = [50, 65, 60, 80, 75]
 
-// const saleTrend = dailySales.map(function(currentItem, index, array){
-//   if(index === 0){
-//     return `Ngay 1: ${currentItem} {Bat dau}`
-//   }
-//   const previousSale =array[index - 1]
-//   const change = currentItem - previousSale
+const saleTrend = dailySales.map(function(currentItem, index, array){
+  if(index === 0){
+    return `Ngay 1: ${currentItem} {Bat dau}`
+  }
+  const previousSale =array[index - 1]
+  const change = currentItem - previousSale
 
-//   return `Ngay ${index + 1}: ${currentItem} Thay doi ${+change}`
+  return `Ngay ${index + 1}: ${currentItem} Thay doi ${+change}`
 
-// })
+})
 
-// console.log(saleTrend)
+console.log(saleTrend)
 
 // // filter -> trả ra giá trị true
 // const soChan = number.filter(function(item){
@@ -250,65 +251,65 @@ for (const selector of possibleBanners ){
 
 // //find()
 
-// const numbers = [1,2,3,4,5,6]
+const numbers = [1,2,3,4,5,6]
 
-// const soLonHon3 = numbers.find(function(item){
-//   return item > 3
-// })
+const soLonHon3 = numbers.find(function(item){
+  return item > 3
+})
 
-// console.log('so lon hon 3 la', soLonHon3);
+console.log('so lon hon 3 la', soLonHon3);
 
 // //Object: 
-// const userArray = ['hoang', 'hoang@gmai.com',30, 'admin']
+const userArray = ['hoang', 'hoang@gmai.com',30, 'admin']
 
-// //object 
-// // { key :value}
-// const userArrayObject = {
-//   name: 'Hoang',
-//   email: 'hoang@gmail.com',
-//   age: 30,
-//   role: 'admin'
-// }
+//object 
+// { key :value}
+const userArrayObject = {
+  name: 'Hoang',
+  email: 'hoang@gmail.com',
+  age: 30,
+  role: 'admin'
+}
 // //truy cập thông tin object thì 
 // //dùng dấu chấm
-// console.log(userArrayObject.name)
+console.log(userArrayObject.name)
 // //ngoặc vuông
-// console.log(userArrayObject['name']);
+console.log(userArrayObject['name']);
 
 // const apiResponse = {
-// userId: 123,
-// userName: 'testUser',
-// email: '123@mgail.com'
-// }
+userId: 123,
+userName: 'testUser',
+email: '123@mgail.com'
+}
 
-// console.log(`Cac key o trong object la: ${Object.keys(apiResponse)}`);
-// console.log(`Cac key o trong object la: ${Object.values(apiResponse)}`);
+console.log(`Cac key o trong object la: ${Object.keys(apiResponse)}`);
+console.log(`Cac key o trong object la: ${Object.values(apiResponse)}`);
 
 // //tìm sản phẩm category = Electronics', instock = true, => trả về final price giảm 10% <1200
-// const products = [
-//   {name: 'Laptop', category: 'Electronics', price: 1200, inStock: true},
-//   {name: 'T-Shirt', category: 'Cotton', price: 25, inStock: true},
-//   {name: 'Mouse', category: 'Electronics', price: 105, inStock: false},
+const products = [
+  {name: 'Laptop', category: 'Electronics', price: 1200, inStock: true},
+  {name: 'T-Shirt', category: 'Cotton', price: 25, inStock: true},
+  {name: 'Mouse', category: 'Electronics', price: 105, inStock: false},
 
-// ]
-// const products = [
-//   {name: 'Laptop', category: 'Electronics', price: 1200, inStock: true},
-//   {name: 'T-Shirt', category: 'Cotton', price: 25, inStock: true},
-//   {name: 'Mouse', category: 'Electronics', price: 105, inStock: false},
+]
+const products = [
+  {name: 'Laptop', category: 'Electronics', price: 1200, inStock: true},
+  {name: 'T-Shirt', category: 'Cotton', price: 25, inStock: true},
+  {name: 'Mouse', category: 'Electronics', price: 105, inStock: false},
 
-// ]
-// const sanPhamCanTim = products.filter(function(product){
-//   return product.category === 'Electronics' && product.inStock
-// }).map(function(product){
-//   return {
-//     name: product.name,
-//     finalPrice: product.price * 0.9
-//   }
-// }).find(function(product){
-//   return product.finalPrice < 1200
-// })
+]
+const sanPhamCanTim = products.filter(function(product){
+  return product.category === 'Electronics' && product.inStock
+}).map(function(product){
+  return {
+    name: product.name,
+    finalPrice: product.price * 0.9
+  }
+}).find(function(product){
+  return product.finalPrice < 1200
+})
 
-// console.log(sanPhamCanTim)
+console.log(sanPhamCanTim)
 
 
 function(thamso){
@@ -326,6 +327,7 @@ const tinhHieu = function(a, b){
 }
 
 const ketQua = tinhHieu (8, 5)
+
 console.log(ketQua)
 
 //==ARROW FUNCTION
@@ -342,3 +344,4 @@ function tong(a,b){
 }
 //thì có thể viết 
 console.log(tong(1,3)); 
+

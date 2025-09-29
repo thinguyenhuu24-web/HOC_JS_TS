@@ -9,37 +9,32 @@
 // PS C:\Users\PC\Desktop\REPO_JS_TS_BASIC\GitHub\HOC_JS_TS> git status -> show ra thư mụcclone đã được liên kết với thư mục trên github hay chưa?
 // PS C:\Users\PC\Desktop\REPO_JS_TS_BASIC\GitHub\HOC_JS_TS> git log -> xem được commmit vừa đẩy lên repo
 
-// Git add ten file thay doi
-// Git commit -m “ten commit”
-// Git push
-// .gitignore
 // PS C:\Users\PC\Desktop\REPO_JS_TS_BASIC\GitHub\HOC_JS_TS> git config --global --list -> xem thông git cài đặt trên github: git config --global --list
 
-Sử dụng terminal
-Bạn có 3 file modified là:
+// Sử dụng terminal
+// Bạn có 3 file modified là:
 
-bai4/bai4.js
+// bai4/bai4.js
 
-bai6/bai6.js
+// bai6/bai6.js
 
-bai6/index.html
+// bai6/index.html
 
-Nếu chỉ muốn add riêng 3 file này, bạn viết lệnh:
+// Nếu chỉ muốn add riêng 3 file này, bạn viết lệnh:
 
-git add bai4/bai4.js bai6/bai6.js bai6/index.html
+// git add bai4/bai4.js bai6/bai6.js bai6/index.html
 
-Một số cách khác tiện hơn:
+// Một số cách khác tiện hơn:
 
-Add toàn bộ file đã sửa (không tính file mới):
+// Add toàn bộ file đã sửa (không tính file mới):
 
-git add -u
+// git add -u
 
 
-Add tất cả (bao gồm cả file mới chưa track, như bai7/):
+// Add tất cả (bao gồm cả file mới chưa track, như bai7/):
 
-git add .
--> Sau đó thực hiện commit bằng cách gõ lệnh: 
-PS C:\Users\PC\Desktop\REPO_JS_TS_BASIC\GitHub\HOC_JS_TS> git commit -m "add msg"
--> Sau đó đẩy lên repo 
-PS C:\Users\PC\Desktop\REPO_JS_TS_BASIC\GitHub\HOC_JS_TS> git push
-cccccccc
+// git add .
+// -> Sau đó thực hiện commit bằng cách gõ lệnh: 
+// PS C:\Users\PC\Desktop\REPO_JS_TS_BASIC\GitHub\HOC_JS_TS> git commit -m "add msg"
+// -> Sau đó đẩy lên repo 
+// PS C:\Users\PC\Desktop\REPO_JS_TS_BASIC\GitHub\HOC_JS_TS> git push

@@ -34,6 +34,7 @@ class Car {
         console.log(`dong co xe ${this.brand} da duoc khoi dong`);
     }
     displayInfo = ()=>{
+        
         console.log(`day la chiec xe ${this.brand} mau ${this.color}`);
     }
 
@@ -64,8 +65,8 @@ const user2 = new NguoiDung('user2@gmail.com', 'User2')
 user2.gioiThieu()
 
 
-4 thuộc tính quan trọng của class
-1. tính đóng gói
+//4 thuộc tính quan trọng của class
+//1. tính đóng gói
 //vien thuốc con nhông. Vỏ thuốc (class), bao bọc thành phần bên trong (private)
 //nguyen tac khi code => moi ham nen lam 1 cong viec chinh no
 class BankAccount {
@@ -87,7 +88,7 @@ const myAccount = new BankAccount()
 myAccount.deposit(100)
 console.log(myAccount.getBalance());
 // console.log(myAccount.#balance);
-2. tính trìu tượng
+//2. tính trìu tượng
 class CoffeeMachine {
     #cleanmachine(){
         console.log('Ve sinh may');
@@ -103,12 +104,12 @@ const machine = new CoffeeMachine()
 machine.makeCoffe()
 //nguoi dung chi can biet goi ham nay
 
-3. tính kế thừa
-cho phép class con kế thừa từ class cha
-dùng từ khóa extend 
+//3. tính kế thừa
+// phép class con kế thừa từ class cha
+//dùng từ khóa extend 
 
 
-4, tính đa hình
+//4, tính đa hình
 class Shape{
     draw(){
         console.log('ve hinh dang chung');
@@ -133,13 +134,13 @@ const shapes = [new Circle(), new Square(), new Shape()
 ]
 shapes.forEach(shape => shape.draw())
 
-VD: xây dựng 1 project automation theo page Object 
-page-Object
--- BasePage.js -> class cha chứa các hàng động Chung 
--- LoginPage.js -> class cho trang dăng nhập
--- Homepage.js -> class cho trang chủ
-tests 
-login.test.js //kịch bản test
+//VD: xây dựng 1 project automation theo page Object 
+//page-Object
+//-- BasePage.js -> class cha chứa các hàng động Chung 
+//-- LoginPage.js -> class cho trang dăng nhập
+//-- Homepage.js -> class cho trang chủ
+//tests 
+//login.test.js //kịch bản test
 
 //export => import
 //File basePage.js
