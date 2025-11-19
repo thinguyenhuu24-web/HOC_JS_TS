@@ -107,6 +107,39 @@ machine.makeCoffe()
 //3. tính kế thừa
 // phép class con kế thừa từ class cha
 //dùng từ khóa extend 
+class Animal {
+    constructor(name){
+        this.name = name
+    }
+    eat(){
+        console.log(`${this.name} dang an`);
+
+    }
+}
+
+class Dog extends Animal {
+    constructor(name, color){
+        super(name) // goi constructor cua lop cha animal
+        this.color = color
+    }
+
+    bark(){
+        console.log('Go go');
+
+    }
+    eat(){
+        console.log('Day la tu class con');
+
+    }
+}
+
+const myDog = new Dog('Kitty', 'Vang')
+myDog.eat()
+
+myDog.bark()
+
+
+
 
 
 //4, tính đa hình
@@ -144,7 +177,7 @@ shapes.forEach(shape => shape.draw())
 
 //export => import
 //File basePage.js
-//playwright => se co 1 gia tri chinh la page (driver o trong selenium,)
+//playwright => se co 1 gia tri chinh la page (driver o trong selenium)
 class BasePage {
     constructor(page, url) {
         this.page = page
@@ -206,7 +239,7 @@ async function runLoginTest() {
     //2 thuc hien hanh dong dang nhap\
     await loginPage.login('Hoang', '1234567')
     //3 chuyen sang trang chu va lay ket qua
-    homePage.navigateTo
+    await homePage.navigateTo()
     const message = await homePage.getWelcomeMessage()
     if(message.includes('Chao mung ban quay tro lai')){
         console.log('TES PASSSED');
